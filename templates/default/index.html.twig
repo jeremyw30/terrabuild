@@ -1,14 +1,67 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil - Terrabuild{% endblock %}
+{% block title %}Terrabuild — Style rétro chantier{% endblock %}
 
 {% block body %}
-<div class="text-center py-5">
-    <h1 class="display-4 mb-4">Bienvenue sur <span class="text-primary">Terrabuild</span></h1>
-    <p class="lead mb-5">Construisez, explorez et défiez vos amis dans le jeu de gestion et de stratégie ultime !</p>
-    <div class="d-flex justify-content-center gap-3">
-        <a href="#" class="btn btn-primary btn-lg">Connexion</a>
-        <a href="#" class="btn btn-outline-primary btn-lg">Inscription</a>
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-logo">LOGO</div>
+      <div class="auth-buttons">
+        <a href="#" class="btn">Connexion</a>
+        <a href="#" class="btn">Inscription</a>
+      </div>
     </div>
-</div>
+  </div>
+</header>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+      :root {
+        --header: #a08969;
+        --header-dark: #6d5a43;
+        --pill: #cfb88f;
+      }
+      body {
+        margin: 0;
+        font: 14px/1.35 "Trebuchet MS", Segoe UI, Roboto, system-ui, -apple-system, sans-serif;
+        background: #efe7d6;
+      }
+      .topbar {
+        background: linear-gradient(#b9a183, var(--header-dark));
+        color: #fff;
+        border-bottom: 4px solid #4f4335;
+      }
+      .wrap { width: 980px; margin: 0 auto; }
+      .brand {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 10px 14px;
+      }
+      .brand-logo {
+        width: 170px; height: 54px;
+        background: linear-gradient(180deg, #ddd, #999);
+        border-radius: 6px;
+        display: grid; place-items: center;
+        font-weight: 800; color: #2a261f;
+      }
+      .auth-buttons { display: flex; gap: 10px; }
+      .btn {
+        background: #4c3f30;
+        color: #fff;
+        padding: 6px 12px;
+        border-radius: 18px;
+        border: 1px solid #0005;
+        text-decoration: none;
+        font-size: 13px;
+      }
+      .btn:hover { filter: brightness(1.1); }
+      .subnav {
+        background: linear-gradient(var(--header-dark), #4f4335);
+        padding: 8px 12px; display:flex; gap:8px;
+      }
+      .tab { background:#78644d; color:#fff; padding:6px 10px; border-radius:6px; border:1px solid #0006; text-decoration: none; }
+      .tab:hover { filter: brightness(1.05); }
+    </style>
 {% endblock %}
