@@ -1,0 +1,44 @@
+{# templates/home/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Accueil — Terrabuild
+{% endblock %}
+
+{% block body %}
+  <div class="container py-5">
+    <div class="row mb-3">
+      <div class="col text-end">
+  <a href="{{ path('app_register') }}" class="btn btn-success me-2">Inscription</a>
+  <a href="/login" class="btn btn-outline-primary">Connexion</a>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="text-center mb-4">
+          <h1 class="display-5 fw-bold">Bienvenue sur Terrabuild ✅</h1>
+          <p class="lead text-muted">
+            Ceci est la page d’accueil de votre projet Symfony.
+          </p>
+        </div>
+
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="h5">Infos techniques</h2>
+            <ul class="mb-0">
+              <li>Contrôleur : <code>src/Controller/HomeController.php</code></li>
+              <li>Template : <code>templates/home/index.html.twig</code></li>
+            </ul>
+          </div>
+        </div>
+         <div class="mt-4">
+           <h2 class="h5">Inscription</h2>
+           {{ form_start(registerForm) }}
+           {{ form_widget(registerForm) }}
+           <button type="submit" class="btn btn-primary">S'inscrire</button>
+           {{ form_end(registerForm) }}
+         </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
