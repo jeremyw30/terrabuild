@@ -1,17 +1,28 @@
-{# templates/register/index.html.twig #}
+{#
+  Template d'inscription utilisateur
+  - Hérite du layout principal base.html.twig
+  - Affiche le formulaire d'inscription
+#}
 {% extends 'base.html.twig' %}
 
+{# Bloc du titre de la page (affiché dans <title>) #}
 {% block title %}
   Inscription
 {% endblock %}
 
+{# Bloc principal du contenu de la page #}
 {% block body %}
-  <div class="centered-form">
-    <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
-      <h1 class="mb-4 text-center" style="font-family: 'Anton', sans-serif;">Créer un compte</h1>
+  <div class="register-form-wrapper">
+    {# Carte centrale contenant le formulaire #}
+    <div class="register-card">
+      {# Titre principal de la page #}
+      <h1 class="register-title">Créer un compte</h1>
+      {# Démarre le formulaire Symfony (gère CSRF, action, etc.) #}
       {{ form_start(registerForm) }}
+        {# Affiche tous les champs du formulaire automatiquement #}
         {{ form_widget(registerForm) }}
-        <button type="submit" class="btn btn-primary w-100 mt-3">S’inscrire</button>
+        {# Bouton de soumission du formulaire #}
+        <button type="submit" class="register-btn">S’inscrire</button>
       {{ form_end(registerForm) }}
     </div>
   </div>

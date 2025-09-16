@@ -1,18 +1,288 @@
+/* Variables CSS */
+:root {
+    --header: #a08969;
+    --header-dark: #6d5a43;
+    --pill: #cfb88f;
+}
+
 body {
-    background-color: skyblue;
+    margin: 0;
+    font: 14px/1.35 "Trebuchet MS", Segoe UI, Roboto, system-ui, -apple-system, sans-serif;
+    background: #efe7d6;
 }
 
-.centered-form {
-    min-height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.topbar {
+    background: linear-gradient(#b9a183, var(--header-dark));
+    color: #fff;
+    /*
+      Fichier principal de styles du projet Terrabuild
+      Toutes les classes et variables sont centralisées ici
+    */
 
-#main-content-wrapper {
-    min-height: 80vh;
-    display: flex;
-    justify-content: center;
+    /* Variables CSS globales pour le thème du site */
+    :root {
+        --header: #a08969; /* Couleur principale du header */
+        --header-dark: #6d5a43; /* Variante foncée du header */
+        --pill: #cfb88f; /* Couleur secondaire */
+    }
+
+    /* Style général du body (fond, police, marges) */
+    body {
+        margin: 0;
+        font: 14px/1.35 "Trebuchet MS", Segoe UI, Roboto, system-ui, -apple-system, sans-serif;
+        background: #efe7d6;
+    }
+
+    /* Barre de navigation principale en haut de page */
+    .topbar {
+        background: linear-gradient(#b9a183, var(--header-dark));
+        color: #fff;
+        border-bottom: 4px solid #4f4335;
+    }
+
+    /* Wrapper central pour limiter la largeur du contenu */
+    .wrap {
+        width: 980px;
+        margin: 0 auto;
+    }
+
+    /* Bloc contenant le logo et les boutons d'authentification */
+    .brand {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 14px;
+    }
+
+    /* Logo du site, agrandi et collé à gauche */
+    .brand-logo {
+        width: 320px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        background: none;
+        margin-left: 0;
+        padding-left: 0;
+        position: relative;
+        left: -40px;
+    }
+    .brand-logo img {
+        height: 220px;
+        width: auto;
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    /* Boutons Connexion/Inscription dans le header */
+    .auth-buttons {
+        display: flex;
+        gap: 10px;
+    }
+    .btn {
+        background: #4c3f30;
+        color: #fff;
+        padding: 6px 12px;
+        border-radius: 18px;
+        border: 1px solid #0005;
+        text-decoration: none;
+        font-size: 13px;
+    }
+    .btn:hover {
+        filter: brightness(1.1);
+    }
+
+    /* Barre de catégories sous le header */
+    .subnav {
+        background: linear-gradient(var(--header-dark), #4f4335);
+        padding: 8px 12px;
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+    }
+    .tab {
+        background: #78644d;
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        border: 1px solid #0006;
+        text-decoration: none;
+    }
+    .tab:hover {
+        filter: brightness(1.05);
+    }
+
+    /* Wrapper du contenu principal pour le centrage vertical/horizontal */
+    .centered-form {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #main-content-wrapper {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Styles du formulaire d'inscription */
+    .register-form-wrapper {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .register-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px #0002;
+        padding: 32px 24px;
+        max-width: 400px;
+        width: 100%;
+    }
+    .register-title {
+        font-family: 'Anton', sans-serif;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    .register-btn {
+        width: 100%;
+        margin-top: 16px;
+        background: #4c3f30;
+        color: #fff;
+        border-radius: 18px;
+        border: none;
+        padding: 10px 0;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+
+    /* Styles du formulaire de connexion */
+    .login-form-wrapper {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .login-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px #0002;
+        padding: 32px 24px;
+        max-width: 400px;
+        width: 100%;
+    }
+    .login-title {
+        font-family: 'Anton', sans-serif;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    .login-field {
+        margin-bottom: 18px;
+    }
+    .login-label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+    }
+    .login-input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+    }
+    .login-btn {
+        width: 100%;
+        margin-top: 16px;
+        background: #4c3f30;
+        color: #fff;
+        border-radius: 18px;
+        border: none;
+        padding: 10px 0;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+    .login-error {
+        background: #f8d7da;
+        color: #842029;
+        border-radius: 6px;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    .login-forgot {
+        text-align: center;
+        margin-top: 18px;
+    }
+    .login-forgot a {
+        color: #4c3f30;
+        text-decoration: underline;
+        font-size: 0.95rem;
+    }
+
+    /* Styles du formulaire mot de passe oublié */
+    .forgot-form-wrapper {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .forgot-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px #0002;
+        padding: 32px 24px;
+        max-width: 400px;
+        width: 100%;
+    }
+    .forgot-title {
+        font-family: 'Anton', sans-serif;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+    .forgot-desc {
+        text-align: center;
+        color: #888;
+        margin-bottom: 18px;
+    }
+    .forgot-field {
+        margin-bottom: 18px;
+    }
+    .forgot-label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+    }
+    .forgot-input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+    }
+    .forgot-btn {
+        width: 100%;
+        margin-top: 16px;
+        background: #4c3f30;
+        color: #fff;
+        border-radius: 18px;
+        border: none;
+        padding: 10px 0;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+    .forgot-success {
+        background: #d1e7dd;
+        color: #0f5132;
+        border-radius: 6px;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 16px;
+    }
     align-items: center;
     
 }

@@ -1,29 +1,35 @@
+{#
+  Template de réinitialisation du mot de passe
+  - Hérite du layout principal base.html.twig
+  - Affiche le formulaire et le message de confirmation
+#}
 {% extends 'base.html.twig' %}
 
+{# Bloc du titre de la page (affiché dans <title>) #}
 {% block title %}Mot de passe oublié{% endblock %}
 
+{# Bloc principal du contenu de la page #}
 {% block body %}
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h1 class="h4 mb-4">Mot de passe oublié</h1>
-            <p class="text-muted">Entrez votre adresse email pour recevoir un lien de réinitialisation.</p>
-            {% if success is defined and success %}
-              <div class="alert alert-success text-center mb-3">Un email de réinitialisation a été envoyé si l'adresse existe.</div>
-            {% else %}
-              <form method="post" action="">
-                <div class="mb-3">
-                  <label for="inputEmail" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail" name="email" required autofocus>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Envoyer le lien</button>
-              </form>
-            {% endif %}
+  <div class="forgot-form-wrapper">
+    {# Carte centrale contenant le formulaire #}
+    <div class="forgot-card">
+      {# Titre principal de la page #}
+      <h1 class="forgot-title">Mot de passe oublié</h1>
+      {# Description sous le titre #}
+      <p class="forgot-desc">Entrez votre adresse email pour recevoir un lien de réinitialisation.</p>
+      {# Affiche le message de succès si l'email a été envoyé #}
+      {% if success is defined and success %}
+        <div class="forgot-success">Un email de réinitialisation a été envoyé si l'adresse existe.</div>
+      {% else %}
+        {# Formulaire de saisie de l'email #}
+        <form method="post" action="">
+          <div class="forgot-field">
+            <label for="inputEmail" class="forgot-label">Email</label>
+            <input type="email" class="forgot-input" id="inputEmail" name="email" required autofocus>
           </div>
-        </div>
-      </div>
+          <button type="submit" class="forgot-btn">Envoyer le lien</button>
+        </form>
+      {% endif %}
     </div>
   </div>
 {% endblock %}

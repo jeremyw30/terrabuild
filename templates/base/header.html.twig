@@ -4,59 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Navigation — Style rétro chantier</title>
-  <style>
-    :root {
-      --header: #a08969;
-      --header-dark: #6d5a43;
-      --pill: #cfb88f;
-    }
-    body {
-      margin: 0;
-      font: 14px/1.35 "Trebuchet MS", Segoe UI, Roboto, system-ui, -apple-system, sans-serif;
-      background: #efe7d6;
-    }
-    .topbar {
-      background: linear-gradient(#b9a183, var(--header-dark));
-      color: #fff;
-      border-bottom: 4px solid #4f4335;
-    }
-    .wrap { width: 980px; margin: 0 auto; }
-    .brand {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 10px 14px;
-    }
-    .brand-logo {
-      width: 170px; height: 54px;
-      background: linear-gradient(180deg, #ddd, #999);
-      border-radius: 6px;
-      display: grid; place-items: center;
-      font-weight: 800; color: #2a261f;
-    }
-    .auth-buttons { display: flex; gap: 10px; }
-    .btn {
-      background: #4c3f30;
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 18px;
-      border: 1px solid #0005;
-      text-decoration: none;
-      font-size: 13px;
-    }
-    .btn:hover { filter: brightness(1.1); }
-    .subnav {
-      background: linear-gradient(var(--header-dark), #4f4335);
-      padding: 8px 12px; display:flex; gap:8px;
-    }
-    .tab { background:#78644d; color:#fff; padding:6px 10px; border-radius:6px; border:1px solid #0006; text-decoration: none; }
-    .tab:hover { filter: brightness(1.05); }
-  </style>
+  {# Les styles sont maintenant dans assets/styles/app.css #}
 </head>
 <body>
   <header class="topbar">
     <div class="wrap">
       <div class="brand">
-        <div class="brand-logo" style="width:320px; height:140px; display:flex; align-items:center; background:none; margin-left:0; padding-left:0; position:relative; left:-40px;">
-          <img src="{{ asset('build/images/logo.png') }}" alt="Logo Terrabuild" style="height:120px; width:auto; margin-left:0;">
+        <div class="brand-logo" style="width:320px; height:120px; display:flex; align-items:center; background:none; margin-left:0; padding-left:0; position:relative; left:-40px;">
+          <img src="{{ asset('build/images/logo.png') }}" alt="Logo Terrabuild" style="height:220px; width:auto; margin-left:0;margin-right: auto;">
         </div>
         <div class="auth-buttons">
           <a href="{{ path('app_login') }}" class="btn">Connexion</a>
@@ -66,10 +21,11 @@
 
     </div>
     <nav class="subnav" style="justify-content:center;">
-      <a href="#" class="tab">Catégorie 1</a>
-      <a href="#" class="tab">Catégorie 2</a>
-      <a href="#" class="tab">Catégorie 3</a>
-      <a href="#" class="tab">Catégorie 4</a>
+      <a href="#" class="tab">Mon entreprise</a>
+      <a href="#" class="tab">Mes batiments</a>
+      <a href="#" class="tab">Mes matériels</a>
+      <a href="#" class="tab">Mes employés</a>
+      <a href="#" class="tab">Mes contrats</a>
     </nav>
   </header>
 </body>
