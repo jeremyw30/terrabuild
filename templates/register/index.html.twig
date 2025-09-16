@@ -6,17 +6,13 @@
 {% endblock %}
 
 {% block body %}
-  <div class="container py-5">
-    <h1 class="mb-4">Créer un compte</h1>
-
-    {# Démarrage du formulaire #}
-    {{ form_start(registerForm) }}
-
-      {# Widgets automatiques pour tous les champs du FormType #}
-      {{ form_widget(registerForm) }}
-
-      <button type="submit" class="btn btn-primary mt-3">S’inscrire</button>
-
-    {{ form_end(registerForm) }}
+  <div class="centered-form">
+    <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+      <h1 class="mb-4 text-center" style="font-family: 'Anton', sans-serif;">Créer un compte</h1>
+      {{ form_start(registerForm) }}
+        {{ form_widget(registerForm) }}
+        <button type="submit" class="btn btn-primary w-100 mt-3">S’inscrire</button>
+      {{ form_end(registerForm) }}
+    </div>
   </div>
 {% endblock %}

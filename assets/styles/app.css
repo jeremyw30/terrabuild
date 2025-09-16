@@ -1,3 +1,18 @@
 body {
     background-color: skyblue;
 }
+
+.centered-form {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-content-wrapper {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}

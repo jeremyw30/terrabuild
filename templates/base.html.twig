@@ -27,7 +27,9 @@
         {% endfor %}
         {% endfor %}
 
-        {% block body %}{% endblock %}
+        <div id="main-content-wrapper">
+            {% block body %}{% endblock %}
+        </div>
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>    

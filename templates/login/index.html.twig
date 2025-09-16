@@ -10,8 +10,23 @@
         <div class="card shadow-sm">
           <div class="card-body">
             <h1 class="h4 mb-4">Connexion</h1>
-            <p class="text-muted">Page de connexion basique (à personnaliser).</p>
-            <!-- Ajoute ici ton formulaire de connexion si besoin -->
+            {% if error is defined and error %}
+              <div class="alert alert-danger text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+            <form method="post" action="{{ path('app_login') }}">
+              <div class="mb-3">
+                <label for="inputEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail" name="_username" value="{{ last_username|default('') }}" required autofocus autocomplete="username">
+              </div>
+              <div class="mb-3">
+                <label for="inputPassword" class="form-label">Mot de passe</label>
+                <input type="password" class="form-control" id="inputPassword" name="_password" required autocomplete="current-password">
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Connexion</button>
+            </form>
+            <div class="text-center mt-3">
+              <a href="{{ path('app_forgot_password') }}" class="link-secondary">Mot de passe oublié&nbsp;?</a>
+            </div>
           </div>
         </div>
       </div>
