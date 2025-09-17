@@ -3,14 +3,33 @@
 {% block title %}Menu Administration{% endblock %}
 
 {% block body %}
-<h1>Menu Administration</h1>
-<nav class="admin-menu">
-    <ul>
-        <li><a href="{{ path('admin_users_index') }}">Utilisateurs</a></li>
-        <li><a href="#">Bâtiments</a></li>
-        <li><a href="#">Matériels</a></li>
-        <li><a href="#">Employés</a></li>
-        <li><a href="#">Contrats</a></li>
-    </ul>
-</nav>
+<h1 style="text-align:center; margin-bottom:32px; color:#2c3e50; font-size:2.2em; letter-spacing:1px;">Menu Administration</h1>
+<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:32px;">
+    <a href="{{ path('admin_users_index') }}" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:180px; height:180px; background:#3498db; color:#fff; border-radius:16px; box-shadow:0 2px 8px #eee; text-decoration:none; font-size:1.2em; transition:transform 0.2s, box-shadow 0.2s; position:relative;">
+        <span style="font-size:2.5em; margin-bottom:12px;">👤</span>
+        Utilisateurs
+    </a>
+    <a href="#" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:180px; height:180px; background:#e67e22; color:#fff; border-radius:16px; box-shadow:0 2px 8px #eee; text-decoration:none; font-size:1.2em; transition:transform 0.2s, box-shadow 0.2s; position:relative;">
+        <span style="font-size:2.5em; margin-bottom:12px;">🏢</span>
+        Bâtiments
+    </a>
+    <a href="#" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:180px; height:180px; background:#16a085; color:#fff; border-radius:16px; box-shadow:0 2px 8px #eee; text-decoration:none; font-size:1.2em; transition:transform 0.2s, box-shadow 0.2s; position:relative;">
+        <span style="font-size:2.5em; margin-bottom:12px;">🛠️</span>
+        Matériels
+    </a>
+    <a href="#" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:180px; height:180px; background:#8e44ad; color:#fff; border-radius:16px; box-shadow:0 2px 8px #eee; text-decoration:none; font-size:1.2em; transition:transform 0.2s, box-shadow 0.2s; position:relative;">
+        <span style="font-size:2.5em; margin-bottom:12px;">👷</span>
+        Employés
+    </a>
+    <a href="#" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:180px; height:180px; background:#c0392b; color:#fff; border-radius:16px; box-shadow:0 2px 8px #eee; text-decoration:none; font-size:1.2em; transition:transform 0.2s, box-shadow 0.2s; position:relative;">
+        <span style="font-size:2.5em; margin-bottom:12px;">📄</span>
+        Contrats
+    </a>
+</div>
+<style>
+    .admin-menu a:hover {
+        transform: scale(1.05);
+        box-shadow:0 4px 16px #bbb;
+    }
+</style>
 {% endblock %}
