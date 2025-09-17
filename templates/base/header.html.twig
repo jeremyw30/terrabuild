@@ -13,6 +13,17 @@
         <div class="brand-logo" style="width:320px; height:120px; display:flex; align-items:center; background:none; margin-left:0; padding-left:0; position:relative; left:-40px;">
           <img src="{{ asset('build/images/logo.png') }}" alt="Logo Terrabuild" style="height:220px; width:auto; margin-left:0;margin-right: auto;">
         </div>
+        <div class="user-info" style="text-align:center; margin-top:8px;">
+          <div class="server-date" style="font-size:1.1em; color:#4c3f30; font-weight:bold; margin-bottom:2px;">
+            {{ "now"|date('l d F Y')|capitalize }}
+          </div>
+          <div class="server-time" style="font-size:1.1em; color:#cf7b00; font-family:'Anton',sans-serif; margin-bottom:4px;">
+            {{ "now"|date('H:i:s') }}
+          </div>
+          {% if app.user %}
+            <div class="user-name" style="font-weight:bold; color:#cf7b00; font-size:1.1em;">👷 Connecté : {{ app.user.surname }}</div>
+          {% endif %}
+        </div>
         <div class="auth-buttons">
           <a href="{{ path('app_login') }}" class="btn">Connexion</a>
           <a href="{{ path('app_register') }}" class="btn">Inscription</a>
@@ -21,7 +32,7 @@
 
     </div>
     <nav class="subnav" style="justify-content:center;">
-      <a href="#" class="tab">Mon entreprise</a>
+  <a href="{{ path('app_entreprise') }}" class="tab">Mon entreprise</a>
       <a href="#" class="tab">Mes batiments</a>
       <a href="#" class="tab">Mes matériels</a>
       <a href="#" class="tab">Mes employés</a>
