@@ -19,12 +19,14 @@
     
     {%  include "base/header.html.twig" %}
         {% for label, messages in app.flashes %}
-        {% for message in messages %}
-            <div class="alert alert-{{ label == 'success' ? 'success' : 'warning' }} alert-dismissible fade show text-center w-50" role="alert">
-                        {{ message }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-        {% endfor %}
+        <div style="display:flex; justify-content:center; align-items:center; width:100%; margin-top:18px;">
+            {% for message in messages %}
+                <div class="alert alert-{{ label == 'success' ? 'success' : 'warning' }} alert-dismissible fade show text-center" style="min-width:320px; max-width:500px; width:100%;" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        </div>
         {% endfor %}
 
         <div id="main-content-wrapper">

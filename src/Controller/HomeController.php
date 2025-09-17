@@ -30,6 +30,11 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher): Response
     {
+        // Message flash si déconnexion
+        if ($request->query->get('logout') === '1') {
+            $this->addFlash('success', 'Déconnexion réussie. À bientôt sur TerraBuild !');
+        }
+
         // Création d'une nouvelle instance d'utilisateur (entité User)
         $user = new \App\Entity\User();
 

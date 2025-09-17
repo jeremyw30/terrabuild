@@ -18,6 +18,7 @@ class EntrepriseController extends AbstractController
     #[Route('/entreprise', name: 'app_entreprise')]
     public function index(): Response
     {
-        return $this->render('entreprise/index.html.twig');
+    $this->addFlash('success', 'Connexion réussie. Bienvenue sur votre espace entreprise TerraBuild !');
+    return $this->render('entreprise/index.html.twig');
     }
 }

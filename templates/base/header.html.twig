@@ -25,8 +25,16 @@
           {% endif %}
         </div>
         <div class="auth-buttons">
-          <a href="{{ path('app_login') }}" class="btn">Connexion</a>
-          <a href="{{ path('app_register') }}" class="btn">Inscription</a>
+          {% if app.user %}
+            <a href="{{ path('app_entreprise') }}" class="btn" style="background:#a08969; color:#fff; font-weight:bold; margin-right:8px;">Mon espace</a>
+            {% if 'ROLE_ADMIN' in app.user.roles %}
+              <a href="{{ path('admin') }}" class="btn" style="background:#cf7b00; color:#fff; font-weight:bold; margin-right:8px;">Admin</a>
+            {% endif %}
+            <a href="{{ path('app_logout') }}" class="btn" style="background:#d8000c; color:#fff; font-weight:bold; margin-right:8px;">Déconnexion</a>
+          {% else %}
+            <a href="{{ path('app_login') }}" class="btn">Connexion</a>
+            <a href="{{ path('app_register') }}" class="btn">Inscription</a>
+          {% endif %}
         </div>
       </div>
 
