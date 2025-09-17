@@ -10,28 +10,28 @@
 
 {# Bloc principal du contenu de la page #}
 {% block body %}
-  <div class="login-form-wrapper">
-    {# Carte centrale contenant le formulaire #}
-    <div class="login-card">
-      {# Titre principal de la page #}
-      <h1 class="login-title">Connexion</h1>
-      {# Affiche le message d'erreur si la connexion échoue #}
+  <div class="register-form-wrapper">
+    <div class="register-card">
+      <div class="register-welcome">
+        <h2>🔑 Connectez-vous à TerraBuild</h2>
+        <p>Retrouvez votre monde, reprenez vos projets et continuez l’aventure là où vous l’avez laissée.<br>
+        Saisissez vos identifiants pour accéder à votre espace et bâtir sans limites.</p>
+      </div>
+      <h1 class="register-title">Connexion</h1>
       {% if error is defined and error %}
         <div class="login-error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
       {% endif %}
-      {# Formulaire de connexion manuel (email + mot de passe) #}
       <form method="post" action="{{ path('app_login') }}">
-        <div class="login-field">
-          <label for="inputEmail" class="login-label">Email</label>
-          <input type="email" class="login-input" id="inputEmail" name="_username" value="{{ last_username|default('') }}" required autofocus autocomplete="username">
+        <div class="form-group">
+          <label for="inputUsername" class="register-card-label">Nom d'utilisateur</label>
+          <input type="text" class="register-card-input" id="inputUsername" name="_username" value="{{ last_username|default('') }}" required autofocus autocomplete="username">
         </div>
-        <div class="login-field">
-          <label for="inputPassword" class="login-label">Mot de passe</label>
-          <input type="password" class="login-input" id="inputPassword" name="_password" required autocomplete="current-password">
+        <div class="form-group">
+          <label for="inputPassword" class="register-card-label">Mot de passe</label>
+          <input type="password" class="register-card-input" id="inputPassword" name="_password" required autocomplete="current-password">
         </div>
-        <button type="submit" class="login-btn">Connexion</button>
+        <button type="submit" class="register-btn">Connexion</button>
       </form>
-      {# Lien vers la page de réinitialisation du mot de passe #}
       <div class="login-forgot">
         <a href="{{ path('app_forgot_password') }}">Mot de passe oublié&nbsp;?</a>
       </div>
