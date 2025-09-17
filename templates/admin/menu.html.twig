@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menu Administration{% endblock %}
+
+{% block body %}
+<h1>Menu Administration</h1>
+<nav class="admin-menu">
+    <ul>
+        <li><a href="{{ path('admin_users_index') }}">Utilisateurs</a></li>
+        <li><a href="#">Bâtiments</a></li>
+        <li><a href="#">Matériels</a></li>
+        <li><a href="#">Employés</a></li>
+        <li><a href="#">Contrats</a></li>
+    </ul>
+</nav>
+{% endblock %}

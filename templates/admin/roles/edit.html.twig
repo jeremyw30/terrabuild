@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier les rôles{% endblock %}
+
+{% block body %}
+<h1>Modifier les rôles de {{ user.email }}</h1>
+<form method="post">
+    <label>
+        <input type="checkbox" name="roles[]" value="ROLE_USER" {% if 'ROLE_USER' in user.roles %}checked{% endif %}> ROLE_USER
+    </label><br>
+    <label>
+        <input type="checkbox" name="roles[]" value="ROLE_ADMIN" {% if 'ROLE_ADMIN' in user.roles %}checked{% endif %}> ROLE_ADMIN
+    </label><br>
+    <button type="submit">Enregistrer</button>
+</form>
+<a href="{{ path('admin_roles_index') }}">Retour à la liste</a>
+{% endblock %}

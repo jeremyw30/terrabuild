@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des utilisateurs{% endblock %}
+
+{% block body %}
+<h1>Utilisateurs</h1>
+<a href="{{ path('admin_users_new') }}" class="btn" style="margin-bottom:16px;">➕ Ajouter un utilisateur</a>
+<table class="user-table" style="width:100%; border-collapse:collapse;">
+    <thead>
+        <tr style="background:#f5f5f5;">
+            <th style="padding:8px; border:1px solid #ddd;">ID</th>
+            <th style="padding:8px; border:1px solid #ddd;">Email</th>
+            <th style="padding:8px; border:1px solid #ddd;">Nom</th>
+            <th style="padding:8px; border:1px solid #ddd;">Rôles</th>
+            <th style="padding:8px; border:1px solid #ddd;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+        <tr>
+            <td style="padding:8px; border:1px solid #ddd;">{{ user.id }}</td>
+            <td style="padding:8px; border:1px solid #ddd;">{{ user.email }}</td>
+            <td style="padding:8px; border:1px solid #ddd;">{{ user.surname }}</td>
+            <td style="padding:8px; border:1px solid #ddd;">{{ user.roles|join(', ') }}</td>
+            <td style="padding:8px; border:1px solid #ddd;">
+                <a href="{{ path('admin_users_edit', {id: user.id}) }}" class="btn" style="margin-right:8px;">✏️ Modifier</a>
+                <a href="{{ path('admin_users_delete', {id: user.id}) }}" class="btn" style="background:#e74c3c; color:#fff;" onclick="return confirm('Supprimer cet utilisateur ?');">🗑️ Supprimer</a>
+            </td>
+        </tr>
+    {% else %}
+        <tr><td colspan="5" style="text-align:center; padding:16px;">Aucun utilisateur trouvé.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

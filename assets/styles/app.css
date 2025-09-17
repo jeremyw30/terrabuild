@@ -1,3 +1,41 @@
+/* Sous-menu utilisateur dans le header */
+.user-menu-wrapper {
+    position: relative;
+    display: inline-block;
+}
+.user-menu-wrapper .user-dropdown {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 120%;
+    background: #fffbe6;
+    border: 1px solid #cf7b00;
+    border-radius: 8px;
+    min-width: 160px;
+    box-shadow: 0 2px 8px #cf7b0044;
+    z-index: 10;
+    padding: 0;
+}
+.user-menu-wrapper:hover .user-dropdown,
+.user-menu-wrapper:focus-within .user-dropdown {
+    display: block;
+}
+.user-dropdown a {
+    display: block;
+    padding: 10px 18px;
+    color: #a08969;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+}
+.user-dropdown a:hover {
+    background: #cf7b00;
+    color: #fffbe6;
+}
+.user-dropdown a:last-child {
+    color: #d8000c;
+}
 /* Unification du style login/inscription : le login utilise les classes register- */
 .register-form-wrapper {
     display: flex;

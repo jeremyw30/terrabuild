@@ -23,8 +23,8 @@
       {% endif %}
       <form method="post" action="{{ path('app_login') }}">
         <div class="form-group">
-          <label for="inputUsername" class="register-card-label">Nom d'utilisateur</label>
-          <input type="text" class="register-card-input" id="inputUsername" name="_username" value="{{ last_username|default('') }}" required autofocus autocomplete="username">
+          <label for="inputEmail" class="register-card-label">Adresse email</label>
+          <input type="email" class="register-card-input" id="inputEmail" name="_username" value="{{ last_username|default('') }}" required autofocus autocomplete="email">
         </div>
         <div class="form-group">
           <label for="inputPassword" class="register-card-label">Mot de passe</label>

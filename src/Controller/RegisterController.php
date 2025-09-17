@@ -28,14 +28,29 @@ final class RegisterController extends AbstractController
      * @return Response La réponse HTTP (affichage du formulaire)
      */
     #[Route('/inscription', name: 'app_register')]
-    public function index(): Response
+    public function index(\Symfony\Component\HttpFoundation\Request $request, \Doctrine\ORM\EntityManagerInterface $entityManager, \Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface $passwordHasher): Response
     {
-        // Création du formulaire d'inscription (FormuType)
-        $registerForm = $this->createForm(FormuType::class);
+        $user = new \App\Entity\User();
+        $registerForm = $this->createForm(\App\Form\FormuType::class, $user);
+        $registerForm->handleRequest($request);
 
-        // Affiche la vue d'inscription avec le formulaire
+        if ($registerForm->isSubmitted() && $registerForm->isValid()) {
+            // Hash du mot de passe
+            $hashedPassword = $passwordHasher->hashPassword($user, $user->getPassword());
+            $user->setPassword($hashedPassword);
+
+            // Optionnel : définir le rôle par défaut
+            $user->setRoles(['ROLE_USER']);
+
+            // Sauvegarde en base
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            // Redirection après succès
+            return $this->redirectToRoute('app_login');
+        }
+
         return $this->render('register/index.html.twig', [
-            // Passe la vue du formulaire à Twig
             'registerForm' => $registerForm->createView(),
         ]);
     }

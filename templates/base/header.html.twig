@@ -21,16 +21,18 @@
             {{ "now"|date('H:i:s') }}
           </div>
           {% if app.user %}
-            <div class="user-name" style="font-weight:bold; color:#cf7b00; font-size:1.1em;">👷 Connecté : {{ app.user.surname }}</div>
+            <div class="user-actions">
+              <a href="{{ path('app_entreprise') }}" class="btn">Mon espace</a>
+              {% if 'ROLE_ADMIN' in app.user.roles %}
+                <a href="{{ path('admin') }}" class="btn">Dashboard admin</a>
+              {% endif %}
+              <a href="{{ path('app_logout') }}" class="btn">Déconnexion</a>
+            </div>
           {% endif %}
         </div>
         <div class="auth-buttons">
           {% if app.user %}
-            <a href="{{ path('app_entreprise') }}" class="btn" style="background:#a08969; color:#fff; font-weight:bold; margin-right:8px;">Mon espace</a>
-            {% if 'ROLE_ADMIN' in app.user.roles %}
-              <a href="{{ path('admin') }}" class="btn" style="background:#cf7b00; color:#fff; font-weight:bold; margin-right:8px;">Admin</a>
-            {% endif %}
-            <a href="{{ path('app_logout') }}" class="btn" style="background:#d8000c; color:#fff; font-weight:bold; margin-right:8px;">Déconnexion</a>
+            {# Les boutons sont maintenant dans le sous-menu utilisateur #}
           {% else %}
             <a href="{{ path('app_login') }}" class="btn">Connexion</a>
             <a href="{{ path('app_register') }}" class="btn">Inscription</a>
