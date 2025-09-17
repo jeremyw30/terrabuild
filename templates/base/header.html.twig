@@ -12,21 +12,6 @@
       <div class="brand">
         <div class="brand-logo" style="width:320px; height:120px; display:flex; align-items:center; background:none; margin-left:0; padding-left:0; position:relative; left:-40px;">
           <img src="{{ asset('build/images/logo.png') }}" alt="Logo Terrabuild" style="height:220px; width:auto; margin-left:0;margin-right: auto;">
-          <div class="server-time-block">
-            <div class="server-day">
-              <i class="fa fa-calendar" aria-hidden="true" title="Jour"></i>
-              {% set jours = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'] %}
-              {% set mois = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'] %}
-              {% set d = "now"|date('w') %}
-              {% set m = "now"|date('n') %}
-              <span>{{ jours[d] }} {{ "now"|date('d') }} {{ mois[m-1] }} {{ "now"|date('Y') }}</span>
-              {# Saisons supprimées, affichage uniquement de la date #}
-            </div>
-            <div class="server-time">
-              <i class="fa fa-clock" aria-hidden="true" title="Heure"></i>
-              <span>{{ "now"|date('H:i:s') }}</span>
-            </div>
-          </div>
         </div>
         <div class="auth-buttons">
           <a href="{{ path('app_login') }}" class="btn">Connexion</a>

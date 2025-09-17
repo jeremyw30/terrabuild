@@ -13,15 +13,16 @@
 {# Bloc principal du contenu de la page #}
 {% block body %}
   <div class="register-form-wrapper">
-    {# Carte centrale contenant le formulaire #}
     <div class="register-card">
-      {# Titre principal de la page #}
+      <div class="register-welcome">
+        <h2>Bienvenue sur TerraBuild !</h2>
+        <p>Rejoignez l’aventure dès aujourd’hui et construisez votre univers.<br>
+        Créez votre compte pour accéder à toutes les fonctionnalités, sauvegarder vos progrès et participer à l’évolution de TerraBuild.</p>
+        <p class="register-cta">👉 Inscrivez-vous en quelques clics et commencez à bâtir votre futur.</p>
+      </div>
       <h1 class="register-title">Créer un compte</h1>
-      {# Démarre le formulaire Symfony (gère CSRF, action, etc.) #}
       {{ form_start(registerForm) }}
-        {# Affiche tous les champs du formulaire automatiquement #}
         {{ form_widget(registerForm) }}
-        {# Bouton de soumission du formulaire #}
         <button type="submit" class="register-btn">S’inscrire</button>
       {{ form_end(registerForm) }}
     </div>
