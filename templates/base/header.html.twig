@@ -45,11 +45,12 @@
 
     </div>
     <nav class="subnav" style="justify-content:center;">
-  <a href="{{ path('app_entreprise') }}" class="tab">Mon entreprise</a>
-      <a href="#" class="tab">Mes batiments</a>
-      <a href="#" class="tab">Mes matériels</a>
-      <a href="#" class="tab">Mes employés</a>
-      <a href="#" class="tab">Mes contrats</a>
+  <a href="{{ path('app_entreprise') }}" class="tab">Accueil entreprise</a>
+  <a href="{{ path('app_entreprise_infos') }}" class="tab">Infos générales</a>
+      <a href="{{ path('app_entreprise_batiments') }}" class="tab">Mes bâtiments</a>
+      <a href="{{ path('app_entreprise_materiels') }}" class="tab">Mes matériels</a>
+      <a href="{{ path('app_entreprise_employes') }}" class="tab">Mes employés</a>
+      <a href="{{ path('app_entreprise_contrats') }}" class="tab">Mes contrats</a>
     </nav>
   </header>
 </body>
