@@ -4,8 +4,43 @@
 {% block title %}Mon entreprise{% endblock %}
 
 {% block body %}
-  <div class="entreprise-wrapper">
-    <h1>Bienvenue dans votre espace entreprise !</h1>
-    <p>Ici vous retrouverez toutes les informations et outils pour gérer votre société sur TerraBuild.</p>
-  </div>
+<div style="display:flex; max-width:1200px; margin:40px auto; gap:32px;">
+  <!-- Colonne gauche -->
+  <aside style="flex:0 0 228px; background:#f5f5f5; border-radius:16px; padding:24px 12px; min-height:500px; display:flex; flex-direction:column; align-items:center;">
+    <h2 style="color:#3498db; font-size:1.2em; margin-bottom:18px;">Menu</h2>
+    <nav style="width:100%;">
+      <a href="#" style="display:block; color:#2980b9; margin-bottom:12px; text-decoration:none; font-weight:bold;">🏢 Infos générales</a>
+      <a href="#" style="display:block; color:#e67e22; margin-bottom:12px; text-decoration:none; font-weight:bold;">👷 Employés</a>
+      <a href="#" style="display:block; color:#16a085; margin-bottom:12px; text-decoration:none; font-weight:bold;">🛠️ Matériels</a>
+      <a href="#" style="display:block; color:#8e44ad; margin-bottom:12px; text-decoration:none; font-weight:bold;">🏗️ Bâtiments</a>
+    </nav>
+  </aside>
+
+  <!-- Colonne centrale -->
+  <main style="flex:1; background:#fff; border-radius:16px; box-shadow:0 2px 16px #eee; padding:32px; min-height:500px;">
+    <h1 style="text-align:center; color:#2c3e50; font-size:2.2em; margin-bottom:24px;">Flash Entreprise</h1>
+    <div style="margin-bottom:24px;">
+      <div style="background:#eafaf1; border-left:6px solid #27ae60; padding:18px 24px; border-radius:8px; margin-bottom:18px;">
+        <strong>🟢 Nouveau contrat signé !</strong> <br>Le chantier "EcoQuartier" démarre la semaine prochaine.
+      </div>
+      <div style="background:#f9eaea; border-left:6px solid #e74c3c; padding:18px 24px; border-radius:8px; margin-bottom:18px;">
+        <strong>🔴 Maintenance prévue</strong> <br>Le matériel "Grue 3000" sera indisponible vendredi.
+      </div>
+      <div style="background:#f7f7e6; border-left:6px solid #f1c40f; padding:18px 24px; border-radius:8px;">
+        <strong>🟡 Recrutement en cours</strong> <br>Nous recherchons un chef de chantier expérimenté.
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:24px;">
+      <a href="#" class="btn" style="background:#3498db; color:#fff; padding:12px 32px; border-radius:8px; font-size:1.1em; text-decoration:none;">Voir tous les détails</a>
+    </div>
+  </main>
+
+  <!-- Colonne droite -->
+  <aside style="flex:0 0 120px; background:#f5f5f5; border-radius:16px; padding:24px 8px; min-height:500px; display:flex; flex-direction:column; align-items:center;">
+    <h2 style="color:#8e44ad; font-size:1.1em; margin-bottom:18px;">Raccourcis</h2>
+    <a href="#" style="display:block; color:#c0392b; margin-bottom:12px; text-decoration:none; font-weight:bold;">📄 Contrats</a>
+    <a href="#" style="display:block; color:#27ae60; margin-bottom:12px; text-decoration:none; font-weight:bold;">🔎 Audit</a>
+    <a href="#" style="display:block; color:#f1c40f; margin-bottom:12px; text-decoration:none; font-weight:bold;">💡 Conseils</a>
+  </aside>
+</div>
 {% endblock %}
